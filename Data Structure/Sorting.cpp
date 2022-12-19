@@ -9,6 +9,12 @@ void swap (int *n1, int *n2){
 }
 
 // Selection Sorting Techniquices;
+/*
+    select small element
+    and make it first
+    concept used in 
+    mergeing concept
+*/
 void selectionSort(int arr[], int n){
     cout<<"using selection sort"<<endl;
     for(int i=0;i<n;i++){
@@ -22,6 +28,12 @@ void selectionSort(int arr[], int n){
 }
 
 // Bubble sorting Techniques;
+
+/*
+    repeatedly swaping 
+    concept used in 
+    mergeing concept
+*/
 
 void bubbleSort(int arr[], int n){
     cout<<"using bubble sort"<<endl;
@@ -38,6 +50,11 @@ void bubbleSort(int arr[], int n){
 }
 
 // Recurtion Bubble Sort Techniques;
+/*
+    recurtion swaping
+    concept used in 
+    mergeing concept
+*/
 
 void recurtionBubbleSort(int arr[], int n){
     if(n == 1)
@@ -54,10 +71,32 @@ void recurtionBubbleSort(int arr[], int n){
 }
 
 //Insertion Sort Techniques;
+/*
+    swapping with
+    begning elements 
+    concept used in 
+    mergeing concept
+*/
 
 void insertionSort(int arr[], int n){
-    
+    for(int i=1;i<n;i++){
+        int j=i;
+        while(j){
+            if(arr[j-1]>arr[j])
+                swap(&arr[j],&arr[j-1]);
+            else break;
+            j--;
+        }
+    }
 }
+
+// Quicksort Techniques
+/*
+    Pivot & Partition
+    concept used in 
+    quicksort concept
+*/
+void quickSort(){}
 
 
 int main(void) {
@@ -67,7 +106,7 @@ int main(void) {
     for(int i=0 ; i < n ; i++)
         cout << arr[i] << ", " ;
     cout<<endl;
-    recurtionBubbleSort(arr,n);
+    insertionSort(arr,n);
     cout<<"Before sorting array"<<endl;
     for(int i=0 ; i < n ; i++)
         cout << arr[i] << ", " ;
