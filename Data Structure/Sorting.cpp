@@ -99,16 +99,16 @@ void insertionSort(int arr[], int n){
 void quickSort(){}
 
 
-int main(void) {
-    int arr[] = {64, 25, 12, 22, 11};
-    int n = sizeof(arr) / sizeof(arr[0]);
-    cout<<"Before sorting array"<<endl;
-    for(int i=0 ; i < n ; i++)
-        cout << arr[i] << ", " ;
-    cout<<endl;
-    insertionSort(arr,n);
-    cout<<"Before sorting array"<<endl;
-    for(int i=0 ; i < n ; i++)
-        cout << arr[i] << ", " ;
-    cout<<endl;
-}
+// int main(void) {
+//     int arr[] = {64, 25, 12, 22, 11};
+//     int n = sizeof(arr) / sizeof(arr[0]);
+//     cout<<"Before sorting array"<<endl;
+//     for(int i=0 ; i < n ; i++)
+//         cout << arr[i] << ", " ;
+//     cout<<endl;
+//     insertionSort(arr,n);
+//     cout<<"Before sorting array"<<endl;
+//     for(int i=0 ; i < n ; i++)
+//         cout << arr[i] << ", " ;
+//     cout<<endl;
+// }
