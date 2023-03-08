@@ -28,6 +28,13 @@ class Sorting{
         */
 
     public :
+        void printList(vector<int> &nums){
+            for(int num : num)
+                cout<<num<<' ';
+            cout << endl;
+        }
+
+    public :
         void InsertionSort(vector<int> &arr){
             int length = arr.size();
             for(int i = 1 ; i < length - 1 ; i++){
@@ -49,6 +56,5 @@ int main() {
     Sorting h;
     vector<int>arr = {11,2,31,40,5,6,14,67,78,12};
     h.InsertionSort(arr);
-    for(int a:arr)
-        cout<< a << ' ';
+        printList(arr);
 }

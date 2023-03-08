@@ -4,7 +4,6 @@
 using namespace std;
 
 class Sorting{
-    public :
     /*
         The algorithm repeatedly selects the smallest (or largest) element 
         from the unsorted portion of the list and swaps it with the first element 
@@ -27,6 +26,15 @@ class Sorting{
         Time Complexity : O(n^2)
         Space Complexity : O(1)
     */ 
+
+    public :
+        void printList(vector<int> &nums){
+            for(int num : num)
+                cout<<num<<' ';
+            cout << endl;
+        }
+
+    public :
         void SelectionSort(vector<int> &arr){
             int len = arr.size();
             for(int i=0 ; i < len-1 ; i++){
@@ -46,6 +54,5 @@ int main() {
     Sorting h;
     vector<int>arr = {11,2,31,40,5,6,14,67,78,12};
     h.SelectionSort(arr);
-    for(int a:arr)
-        cout<< a << ' ';
+    printList(arr);
 }
