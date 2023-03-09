@@ -29,7 +29,7 @@ class Sorting{
 
     public :
         void printList(vector<int> &nums){
-            for(int num : num)
+            for(int num : nums)
                 cout<<num<<' ';
             cout << endl;
         }
