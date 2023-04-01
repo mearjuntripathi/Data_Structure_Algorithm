@@ -10,14 +10,14 @@ class Sorting{
 
             Algorithm :-
 
-                First check low is less then high
-                Then make a pivot to lower element
-                divide a array in two part 
-                    left side has a lower element as pivot 
-                    right side has a greator element as pivot
-                And repeat step 1-3 for two subarray 
-                    one for greator element as pivot 
-                    one for lower lower element as pivot
+                Step 1: First check low is less then high
+                Step 2: Then make a pivot to lower element
+                Step 3: divide a array in two part 
+                    Step a: left side has a lower element as pivot 
+                    Step b: right side has a greator element as pivot
+                Step 4: And repeat step 1-3 for two subarray 
+                    Step a: one for greator element as pivot 
+                    Step b: one for lower lower element as pivot
 
             Time Complexity [ wrost case O(n^2) || best case : O(n) || average case : O(n log n)  ]
             Space Complexity : O(log n)
