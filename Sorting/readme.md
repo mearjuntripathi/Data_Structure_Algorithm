@@ -1,4 +1,5 @@
 # Sorting
+
 The operation of sorting is the most common task performed by computers today. Sorting is used to arrange names and numbers in meaningful ways. 
 
 ## Types of sorting
@@ -15,8 +16,7 @@ Sorting can be performed in many ways. Over a time several methods (or algorithm
 </ul>
 
 ## Complexity of Sorting Algorithm
-The complexity of sorting algorithm measures the running time of n items to be sorted.<br>
-The operations in the sorting algorithm, where A1, A2 ..... An contains the items to be sorted and B is an auxiliary location, can be generalized as:
+The complexity of sorting algorithm measures the running time of n items to be sorted. The operations in the sorting algorithm, where A1, A2 ..... An contains the items to be sorted and B is an auxiliary location, can be generalized as:
 <pre>
 <ol type='a'>
     <li>Comparisons- which tests whether Ai < Aj or test whether Ai < B </li>

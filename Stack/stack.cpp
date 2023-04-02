@@ -6,14 +6,23 @@
 using namespace std;
 
 class Node{
-    public :
+    
         int data;
         Node *next;
 
-        Node (int d, Node* n){
-            this->data = d;
-            this->next = n;
+    public :
+        Node (int data, Node* next){
+            this->data = data;
+            this->next = next;
         }
+
+        int get_data(){return data;}
+
+        void set_data(int data){this->data = data;}
+
+        Node* get_next_node(){return next;}
+
+        void set_next_node(Node *next){this->next = next;}
 };
 
 class Stack{
@@ -48,14 +57,14 @@ int Stack :: pop(){
         return -1;
     }
     Node *temp = head;
-    int data = head->data;
-    head = head->next;
+    int data = head->get_data();
+    head = head->get_next_node();
     free(temp);
     return data;
 }
 
 int Stack :: peak(){
-    return head -> data;
+    return head -> get_data();
 }
 
 int main(){

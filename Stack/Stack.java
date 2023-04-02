@@ -1,12 +1,20 @@
 import java.util.*;
 
 class Node{
-    public int data;
-    public Node next;
+    int data;
+    Node next;
+
     public Node(int data, Node next){
         this.data = data;
         this.next = next;
     }
+    public int getData(){return data;}
+
+    public void setData(int data){this.data = data;}
+
+    public Node getNextNode(){return next;}
+
+    public void setNextNode(Node next){this.next = next;}
 }
 
 class Stack{
@@ -29,7 +37,7 @@ class Stack{
             return -1;
         }
         int data = head.data;
-        head = head.next;
+        head = head.getNextNode();
         return data;
     }
 

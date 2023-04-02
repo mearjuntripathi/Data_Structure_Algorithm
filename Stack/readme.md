@@ -11,32 +11,27 @@ A stack is one of the most important and useful non-primitive linear data struct
 
 ### <CENTER> ALGORITHM FOR PUSH OPERATION</CENTER>
 <pre>
-<ol>
-<li>If TOP = SIZE – 1, then:</li>
-<ol type=a>
-<li>Display “The stack is in overflow condition”</li>
-<li>Exit</li>
-</ol>
-<li>TOP = TOP + 1</li>
-<li>STACK [TOP] = ITEM</li>
-<li>Exit</li>
-</ol>
+
+1.If TOP = SIZE – 1, then:
+    a. Display “The stack is in overflow condition”
+    b. Exit
+
+2. TOP = TOP + 1
+3. STACK [TOP] = ITEM
+4. Exit
 </pre>
 
 **POP :** <br> The process of deleting (or removing) an element from the top of stack is called POP operation. After every pop operation the stack is decremented by one. If there is no element in the stack and the pop operation is performed then the stack underflow condition occurs.
 
 ### <CENTER>ALGORITHM FOR POP OPERATION</CENTER>
 <pre>
-<ol>
-<li>If TOP < 0 , then:</li>
-<ol type=a>
-<li>Display “The stack is in Underflow condition”</li>
-<li>Exit</li>
-</ol>
-<li>data = STACK[TOP]</li>
-<li>remove the top most element</li>
-<li>return data</li>
-</ol>
+1. If TOP < 0 , then:
+    a. Display “The stack is in Underflow condition”
+    b. Exit
+
+2. data = STACK[TOP]
+3. remove the top most element
+4. return data
 </pre>
 <hr>
 
