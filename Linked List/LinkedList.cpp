@@ -92,7 +92,7 @@ class LinkedList{
         void reverse();
 
     // concatenation
-        friend void concate(LinkedList,LinkedList);
+        friend void concate(LinkedList*, LinkedList*);
 };
 
 // Constructor
@@ -299,14 +299,13 @@ void LinkedList :: reverse(){
 
 
 // concatenation
-void concate(LinkedList l1, LinkedList l2){
-    Node *temp_node = l1.head;
+void concate(LinkedList *l1, LinkedList *l2){
+    Node *temp_node = l1->head;
     while(temp_node->get_next_node() != NULL){
         temp_node = temp_node->get_next_node();
     }
-    Node *temp = l2.head;
-    l1.length += l2.length;
-    cout<<l1.length<<endl;
+    Node *temp = l2->head;
+    l1->length += l2->length;
     temp_node->set_next_node(temp);
 }
 
@@ -330,7 +329,7 @@ int main() {
     l.print_list();
     cout << "size of list: " << l.size()<<endl;
     cout << l.deletion(3) <<endl;
-    concate(l,l1);
+    concate(&l,&l1);
     l.print_list();
     l.reverse();
     l.print_list();
