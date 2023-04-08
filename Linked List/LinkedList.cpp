@@ -89,8 +89,10 @@ class LinkedList{
 
         int find(int);
 
+        void reverse();
+
     // concatenation
-        void concate(LinkedList,LinkedList);
+        friend void concate(LinkedList,LinkedList);
 };
 
 // Constructor
@@ -254,7 +256,7 @@ void LinkedList :: print_list(){
     Node *temp_node = head;
     cout << "List data is : ";
     while(temp_node != NULL){
-        cout << temp_node->get_data() << " -> ";
+        cout << temp_node->get_data() << " => ";
         temp_node = temp_node->get_next_node();
     }
     cout << "NULL" << endl;
@@ -275,14 +277,41 @@ int LinkedList :: find(int num){
     else return -1;
 }
 
+void LinkedList :: reverse(){
+    
+    if(empty() || size() == 1)
+        return;
+
+    Node *prev_node = NULL;
+    Node *curr_node = head;
+    Node *next_node = curr_node->get_next_node();
+    
+    curr_node->set_next_node(prev_node);
+
+    while(next_node != NULL){
+        prev_node = curr_node;
+        curr_node = next_node;
+        next_node = next_node->get_next_node();
+        curr_node->set_next_node(prev_node);
+    }
+    head = curr_node;
+}
+
 
 // concatenation
-void LinkedList :: concate(LinkedList l1, LinkedList l2){
-    
+void concate(LinkedList l1, LinkedList l2){
+    Node *temp_node = l1.head;
+    while(temp_node->get_next_node() != NULL){
+        temp_node = temp_node->get_next_node();
+    }
+    Node *temp = l2.head;
+    l1.length += l2.length;
+    cout<<l1.length<<endl;
+    temp_node->set_next_node(temp);
 }
 
 int main() {
-    LinkedList l;
+    LinkedList l,l1;
     l.push_back(4);
     l.push_back(5);
     l.push_front(3);
@@ -294,9 +323,16 @@ int main() {
     l.push_back(8);
     l.insert(10,10);
     l.insert(9,10);
+    l1.push_back(11);
+    l1.push_back(12);
+    l1.push_back(13);
+    l1.push_back(14);
     l.print_list();
     cout << "size of list: " << l.size()<<endl;
     cout << l.deletion(3) <<endl;
+    concate(l,l1);
+    l.print_list();
+    l.reverse();
     l.print_list();
     cout << "size of list: " << l.size()<<endl;
 }
