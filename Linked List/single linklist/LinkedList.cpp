@@ -247,6 +247,7 @@ bool LinkedList :: deletion(int num){
 
 }
 
+
 // traversal
 void LinkedList :: print_list(){
     if(empty()){
