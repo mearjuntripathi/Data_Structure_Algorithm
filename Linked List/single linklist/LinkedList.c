@@ -26,9 +26,9 @@ int deletion(int);
 
 void print_list();
 
-// int find(int);
+int find(int);
 
-// void reverse();
+void reverse();
 
 int main(void) {
     head = NULL;
@@ -52,7 +52,10 @@ int main(void) {
     print_list();
     printf("last element is: %d\n",pop_back());
     print_list();
-    printf("delete 4th element is: %d\n",delete(4));
+    printf("delete element 5 is: %d\n",deletion(5));
+    print_list();
+    printf("find 5 in list is: %d\n",find(5));
+    reverse();
     print_list();
     printf("size is: %d",length);
 }
@@ -199,15 +202,65 @@ int deletion(int num){
         printf("List is empty nothing is deleted");
         return -1;
     }
+    struct Node *temp_node = head;
+    if(temp_node->data == num){
+        pop_front();
+        return 1;
+    }
+
+    struct Node *temp = temp_node->next;
+    while(temp->data != num && temp->next != NULL){
+        temp = temp->next;
+        temp_node = temp_node->next; 
+    }
+
+    if(temp->data == num){
+        temp_node->next = temp->next;
+        free(temp);
+        length--;
+        return 1;
+    }
+    printf("%d is not avilable in this list",num);
+    return 0;
+}
+
+
+int find(int num){
+    if(empty()){
+        printf("List is empty nothing is deleted");
+        return -1;
+    }
+    struct Node *temp_node = head;
     int i=0;
-    struct Node temp_node = head;
-    while(i<length || temp->next->data != num){
+
+    while(temp_node->data != num && temp_node->next != NULL){
         temp_node = temp_node->next;
         i++;
     }
-    if(temp_node->next->data == num){
 
+    if(temp_node->data == num){
+        return i;
     }
+    else return -1;
+}
+
+void reverse(){
+    if(empty() || length == 1)
+        return;
+
+    struct Node *prev_node = NULL;
+    struct Node *curr_node = head;
+    struct Node *next_node = curr_node->next;
+    
+    curr_node->next = prev_node;
+
+    while(next_node != NULL){
+        prev_node = curr_node;
+        curr_node = next_node;
+        next_node = next_node->next;
+        curr_node->next = prev_node;
+    }
+    head = curr_node;
 }
 
 void print_list(){

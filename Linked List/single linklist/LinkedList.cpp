@@ -244,7 +244,6 @@ bool LinkedList :: deletion(int num){
     }
     cout << num << " is not avilable in list" << endl;
     return false;
-
 }
 
 
