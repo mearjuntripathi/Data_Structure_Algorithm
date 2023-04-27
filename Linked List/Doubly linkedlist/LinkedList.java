@@ -94,6 +94,42 @@ class LinkedList{
         System.out.print("NULL\n");
     }
 
+    public int popFront(){
+        if(isEmpty()){
+            System.out.println("List is Empty");
+            return -1;
+        }
+
+        Node temp = head;
+        if(head == tail){
+            head = tail = null;
+            return temp.getData();
+        }
+
+    
+        
+        head = head.getNextNode();
+        head.setPrevNode(null);
+        return temp.getData();
+    }
+
+    public int popBack(){
+        if(isEmpty()){
+            System.out.println("Your List is Empty...");
+            return -1;
+        }
+
+        Node temp = tail;
+        if(head == tail){
+            head = tail = null;
+            return temp.getData();
+        }
+
+        tail = tail.getPrevNode();
+        tail.setNextNode(null);
+        return temp.getData();
+    }
+
     public static void main(String []arg){
         LinkedList l = new LinkedList();
         l.pushBack(4);
@@ -106,6 +142,9 @@ class LinkedList{
         l.pushBack(8);
         l.pushBack(9);
         l.pushFront(0);
+        l.print();
+        l.printReverse();
+        System.out.println("Data is deleted from back in list is: "+ l.popBack());
         l.print();
         l.printReverse();
     }
