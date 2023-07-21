@@ -42,6 +42,7 @@ class Sorting {
 
             for(int i = 0 ; i < n ; i++)
                 temp[arr[i]]++;
+                
             int x = 0;
             for(int i = 0 ; i <= max ; i ++){
                 while(temp[i]--)
