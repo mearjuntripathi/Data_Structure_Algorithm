@@ -148,6 +148,30 @@ Step 4: And repeat step 1-3 for two subarray
 
     Step b: one for lower lower element as pivot
 
-Time Complexity [ wrost case O(n^2) || best case : O(n) || average case : O(n log n)  ]
+Time Complexity : [ wrost case O(n^2) || best case : O(n) || average case : O(n log n)  ]
 Space Complexity : O(log n)
 </pre>
+
+
+## Counting Sort
+Counting sort is a sorting technique based on keys between a specific range. It works by counting the number of objects having distinct key values (a kind of hashing). Then do some arithmetic operations to calculate the position of each object in the output sequence.
+
+![counting sort](https://www.researchgate.net/publication/220686480/figure/fig4/AS:667707569614851@1536205298801/Example-of-counting-sort.png)
+
+### <center>Algorithm</center>
+    
+    Step 1 − I get a max element in array.
+
+    Step 2 – Create a new array of length max with element 0.
+
+    Step 3 − Increase a new array element as frequency of element in array.
+
+    Step 4 – After inserting we get a frequency of each element in array.
+
+    Step 5 − Reinsert the value in old array as their frequency.
+
+    Time Complexity: O(N + K) 
+        
+    Auxiliary Space: O(N + K)
+
+        where, N is the number of elements in the input array and K is the range of input.
