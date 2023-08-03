@@ -31,25 +31,34 @@ class Sorting{
         }
 
     public :
+
+        int partition(vector<int> &arr, int low, int high){
+            // make pivot lower elemnt
+            int pivot = low;
+            
+            int i = low, j = high;
+            while(i < j){
+                // making array less element at one side and greater element one side of pivot 
+                while(arr[i] <= arr[pivot]) i++;
+                while(arr[j] > arr[pivot]) j--;
+                if(i < j)
+                    swap(arr[i] , arr[j]);
+            }
+
+            swap(arr[j] , arr[pivot]); // swaping the value of pivot at their original place
+
+            return j;
+        }
+
         void QuickSort(vector<int> &arr, int low, int high){
             // first i check low is lower then high
             if(low < high){
-                // make pivot lower elemnt
-                int pivot = low;
-                
-                int i = low, j = high;
-                while(i < j){
-                    // making array less element at one side and greater element one side of pivot 
-                    while(arr[i] <= arr[pivot]) i++;
-                    while(arr[j] > arr[pivot]) j--;
-                    if(i < j)
-                        swap(arr[i] , arr[j]);
-                }
-                swap(arr[j] , arr[pivot]); // swaping the value of pivot at their original place
 
-                QuickSort(arr, low, j - 1); // for pivot left
+                int pi = partition(arr,low,high);
 
-                QuickSort(arr, j + 1, high); // for pivot right
+                QuickSort(arr, low, pi - 1); // for pivot left
+
+                QuickSort(arr, pi + 1, high); // for pivot right
             }
         }
 };
@@ -59,5 +68,5 @@ int main() {
     Sorting h;
     vector<int>arr = {11,2,31,40,5,6,14,67,78,12};
     h.QuickSort(arr, 0, arr.size()-1);
-        printList(arr);
+        h.printList(arr);
 }
