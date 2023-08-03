@@ -28,39 +28,44 @@ class Sorting{
 
     public :
 
+        void Merge(vector<int> &arr, int start, int mid, int end){
+            //first we create a temp variable
+            int temp [(end-start)+1];
+            //we create three variable
+            int i=start,j=mid+1,k=0;
+            // arrang array element in well formate
+            while(i <= mid && j <= end){
+                if(arr[i] < arr[j]){
+                    temp[k++] = arr[i++];
+                }
+                else{
+                    temp[k++] = arr[j++];
+                }
+            }
+            while(j<=end){
+                temp[k++] = arr[j++];
+            }
+            while(i<=mid){
+                temp[k++] = arr[i++];
+            }
+            k=0;
+            for(int l = start ; l <= end ; l++)
+                arr[l] = temp[k++];
+        }
+
         void MergeSort(vector<int> &arr, int start, int end){
             if(end>start){
 
                 int mid = start + (end - start) / 2 ;
+
                 //for start to mid
                 MergeSort(arr,start,mid);
+
                 //for mid to end
                 MergeSort(arr,mid+1,end);
                 
                 //now we merge both
-
-                //first we create a temp variable
-                int temp [(end-start)+1];
-                //we create three variable
-                int i=start,j=mid+1,k=0;
-                // arrang array element in well formate
-                while(i <= mid && j <= end){
-                    if(arr[i] < arr[j]){
-                        temp[k++] = arr[i++];
-                    }
-                    else{
-                        temp[k++] = arr[j++];
-                    }
-                }
-                while(j<=end){
-                    temp[k++] = arr[j++];
-                }
-                while(i<=mid){
-                    temp[k++] = arr[i++];
-                }
-                k=0;
-                for(int l = start ; l <= end ; l++)
-                    arr[l] = temp[k++];
+                Merge(arr,start,mid,end);
             }
         }
 };
