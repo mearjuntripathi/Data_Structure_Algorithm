@@ -3,3 +3,5 @@
 ![MAANG](./images/maang.png)
 
 ## [DAY : 1](./DAY%20:%201/)
+
+## [DAY : 2](./DAY%20:%202/)
