@@ -210,3 +210,33 @@ This algorithm has a time complexity of O(n) and a space complexity of O(1).
 * The fifth line checks if the current element is equal to the candidate element. If it is, then the algorithm increments the count. Otherwise, the algorithm decrements the count.
 * The sixth line goes back to the top of the loop.
 * The seventh line returns the candidate element.
+
+## [Question 4](#question-4): [Move Zeroes](https://leetcode.com/problems/move-zeroes/)
+Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the non-zero elements.
+
+***Note:** that you must do this in-place without making a copy of the array.*
+
+ 
+
+**Example 1:**
+
+&nbsp; **Input:** nums = [0,1,0,3,12]
+
+&nbsp; **Output:** [1,3,12,0,0]
+
+**Example 2:**
+
+&nbsp; **Input:** nums = [0]
+
+&nbsp; **Output:** [0]
+ 
+
+**Constraints:**
+
+* 1 <= nums.length <= 104
+* -231 <= nums[i] <= 231 - 1
+ 
+
+`Follow up: Could you minimize the total number of operations done?`
+
+## Solution
