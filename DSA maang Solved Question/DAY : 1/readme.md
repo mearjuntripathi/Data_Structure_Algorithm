@@ -240,3 +240,215 @@ Given an integer array nums, move all 0's to the end of it while maintaining the
 `Follow up: Could you minimize the total number of operations done?`
 
 ## Solution
+
+**Approach:**
+
+The approach is to maintain two pointers, `low` and `pos`. The `low` pointer points to the first non-zero element in the array. The `pos` pointer points to the current element in the array.
+
+We iterate through the array, and if the current element is non-zero, we swap it with the element at the `low` pointer. We then increment both pointers.
+
+If the current element is zero, we simply increment the `pos` pointer.
+
+**Algorithm:**
+
+    void moveZeroes(vector<int>& nums) {
+      int low = 0;
+      int pos = 0;
+      int size = nums.size();
+
+      while (low < size && pos < size) {
+        if (nums[low] == 0 && nums[pos] == 0) {
+          pos++;
+        } else {
+          if (nums[low] == 0 && nums[pos] != 0) {
+            nums[low] = nums[pos];
+            nums[pos] = 0;
+          }
+          low++;
+          pos++;
+        }
+      }
+    }
+**Explanation:**
+
+The first step is to initialize the `low` and `pos` pointers. The `low` pointer is initialized to 0, and the pos pointer is initialized to 0. The `size` variable stores the number of elements in the array.
+
+## [Question 5](#question-5): [Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array/)
+Given an integer array nums sorted in non-decreasing order, return an array of the squares of each number sorted in non-decreasing order.
+
+ 
+
+**Example 1:**
+
+&nbsp; **Input:** nums = [-4,-1,0,3,10]
+
+&nbsp; **Output:** [0,1,9,16,100]
+
+&nbsp; **Explanation:** After squaring, the array becomes [16,1,0,9,100].
+After sorting, it becomes [0,1,9,16,100].
+
+**Example 2:**
+
+&nbsp; **Input:** nums = [-7,-3,2,3,11]
+
+&nbsp; **Output:** [4,9,9,49,121]
+ 
+
+**Constraints:**
+
+* `1 <= nums.length <= 104`
+* `-104 <= nums[i] <= 104`
+* `nums` is sorted in non-decreasing order.
+
+***Follow up:** Squaring each element and sorting the new array is very trivial, could you find an O(n) solution using a different approach?
+*
+
+## Solution
+**Approach:**  The approach is to use a greedy algorithm. The greedy algorithm works as follows:
+
+1. Initialize two pointers, `left` and `right`, pointing to the beginning and end of the array, respectively.
+2. Iterate through the array from the end, starting from index `size - 1`.
+3. At each iteration, compare the absolute values of `nums[left]` and `nums[right]`.
+    * If the absolute value of `nums[left]` is greater than the absolute value of `nums[right]`, then add the square of `nums[left]` to the result array.
+    *  Otherwise, add the square of `nums[right]` to the result array.
+    * Update the pointers accordingly.
+4. Once the entire array has been traversed, return the result array.
+
+**Algorithm:**
+
+    vector<int> sortedSquares(vector<int>& nums) {
+    // Initialize two pointers.
+    int left = 0, right = nums.size() - 1;
+
+    // Create a result array.
+    vector<int> result(nums.size());
+
+    // Iterate through the array from the end.
+    for (int i = nums.size() - 1; i >= 0; i--) {
+        // Compare the absolute values of the elements at the pointers.
+        if (abs(nums[left]) > abs(nums[right])) {
+        // Add the square of the element at the left pointer to the result array.
+        result[i] = nums[left] * nums[left];
+        // Move the left pointer one position to the right.
+        left++;
+        } else {
+        // Add the square of the element at the right pointer to the result array.
+        result[i] = nums[right] * nums[right];
+        // Move the right pointer one position to the left.
+        right--;
+        }
+    }
+
+    // Return the result array.
+    return result;
+    }
+
+## [Question 6](#question-6): [Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/)
+
+You are given two integer arrays `nums1` and `nums2`, sorted in **non-decreasing order**, and two integers `m` and `n`, representing the number of elements in `nums1` and `nums2` respectively.
+
+**Merge** `nums1` and `nums2` into a single array sorted in non-decreasing order.
+
+The final sorted array should not be returned by the function, but instead be stored inside the array `nums1`. To accommodate this, `nums1` has a length of `m + n`, where the first `m` elements denote the elements that should be merged, and the last `n` elements are set to `0` and should be ignored. `nums2` has a length of `n`.
+
+ 
+
+**Example 1:**
+
+
+&nbsp; **Input:** nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3
+
+&nbsp; **Output:** [1,2,2,3,5,6]
+
+&nbsp; **Explanation:** The arrays we are merging are [1,2,3] and [2,5,6].
+The result of the merge is [1,2,2,3,5,6] with the underlined elements coming from nums1.
+
+**Example 2:**
+
+
+&nbsp;**Input:** nums1 = [1], m = 1, nums2 = [], n = 0
+
+&nbsp;**Output:** [1]
+
+&nbsp;**Explanation:** The arrays we are merging are [1] and [].
+The result of the merge is [1].
+Example 3:
+
+
+&nbsp; **Input:** nums1 = [0], m = 0, nums2 = [1], n = 1
+
+&nbsp; **Output:** [1]
+
+&nbsp; **Explanation:** The arrays we are merging are [] and [1].
+The result of the merge is [1].
+Note that because m = 0, there are no elements in nums1. The 0 is only there to ensure the merge result can fit in nums1.
+ 
+
+**Constraints:**
+
+* `nums1.length == m + n`
+* `nums2.length == n`
+* `0 <= m, n <= 200`
+* `1 <= m + n <= 200`
+* `-109 <= nums1[i], nums2[j] <= 109`
+ 
+
+***Follow up:** Can you come up with an algorithm that runs in `O(m + n)` time?*
+
+## Solution
+
+**Approach:**
+
+`The merge()` function merges two sorted arrays, nums1 and nums2, into a single sorted array. The function works by first checking if either of the arrays is empty. If nums2 is empty, then the function simply returns. If nums1 is empty, then the function copies nums2 to nums1 and returns.
+
+If neither of the arrays is empty, then the function initializes three pointers:
+
+* `last_n1`: Points to the last element in nums1.
+* `last_n2`: Points to the last element in nums2.
+* `last_result`: Points to the last element in the merged array (which is initially equal to the last element in nums1 + the last element in nums2).
+
+The function then iterates until `last_n2` is less than or equal to `0`. At each iteration, the function checks if the element pointed to by `last_n1` is less than or equal to the element pointed to by `last_n2`. If it is, then the function copies the element pointed to by `last_n2` to the element pointed to by `last_result` and decrements both `last_n2` and `last_result`. Otherwise, the function copies the element pointed to by last_n1 to the element pointed to by `last_result` and decrements last_n1.
+
+Once the loop terminates, the function has merged the two sorted arrays into a single sorted array.
+
+**Algorithm:** The algorithm of the merge() function can be summarized as follows:
+
+1. Check if either of the arrays is empty.
+2. If nums2 is empty, then return.
+3. If nums1 is empty, then copy nums2 to nums1 and return.
+4. Initialize last_n1 and last_n2 to point to the last elements of nums1 and nums2, respectively.
+5. Initialize last_result to point to the last element of the merged array.
+6. Enter a loop that iterates until last_n2 is less than or equal to 0.
+7. In each iteration of the loop, check if the element at last_n1 is less than or equal to the element at last_n2.
+8. If it is, then copy the element at last_n2 to the element at last_result and decrement both last_n2 and last_result.
+9. Otherwise, copy the element at last_n1 to the element at last_result and decrement both last_n1 and last_result.
+10. Return
+
+        void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
+            // Check if either of the arrays is empty.
+            if (n == 0) {
+                return;
+            }
+            if (m == 0) {
+                nums1 = nums2;
+                return;
+            }
+
+            // Initialize pointers to the end of each array.
+            int last_n1 = m - 1;
+            int last_n2 = n - 1;
+            int last_result = m + n - 1;
+
+            // Iterate until last_n2 is less than or equal to 0.
+            while (last_n2 >= 0) {
+                // Check if the element pointed to by last_n1 is less than or equal to the element pointed to by last_n2.
+                if (nums1[last_n1] <= nums2[last_n2]) {
+                nums1[last_result] = nums2[last_n2];
+                last_n2--;
+                } else {
+                nums1[last_result] = nums1[last_n1];
+                last_n1--;
+                }
+                last_result--;
+            }
+        }
