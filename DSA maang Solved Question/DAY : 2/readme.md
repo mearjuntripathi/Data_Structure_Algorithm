@@ -124,7 +124,7 @@ If all assertions pass, then your solution will be accepted.
 
 &nbsp; **Output:** 5, nums = [1,1,2,2,3,_]
 
-&nbsp; Explanation: Your function should return k = 5, with the first five elements of nums being 1, 1, 2, 2 and 3 respectively.
+&nbsp; **Explanation:**Your function should return k = 5, with the first five elements of nums being 1, 1, 2, 2 and 3 respectively.
 It does not matter what you leave beyond the returned k (hence they are underscores).
 
 **Example 2:**
@@ -134,7 +134,7 @@ It does not matter what you leave beyond the returned k (hence they are undersco
 
 &nbsp; **Output:** 7, nums = [0,0,1,1,2,3,3,_,_]
 
-&nbsp; Explanation: Your function should return k = 7, with the first seven elements of nums being 0, 0, 1, 1, 2, 3 and 3 respectively.
+&nbsp; **Explanation:**Your function should return k = 7, with the first seven elements of nums being 0, 0, 1, 1, 2, 3 and 3 respectively.
 It does not matter what you leave beyond the returned k (hence they are underscores).
  
 
@@ -281,7 +281,7 @@ Given two integer arrays `nums1` and `nums2`, return an array of their intersect
 
 &nbsp; **Output:** [9,4]
 
-&nbsp; **Explanation:** [4,9] is also accepted.
+&nbsp;  **Explanation:** [4,9] is also accepted.
  
 
 **Constraints:**
@@ -291,3 +291,273 @@ Given two integer arrays `nums1` and `nums2`, return an array of their intersect
 
 ## Solution
 
+**Approach:**
+
+The approach is to first sort the two arrays, nums1 and nums2. This is done so that we can easily compare elements from the two arrays and find the intersections.
+
+Once the arrays are sorted, we can start traversing them simultaneously. We keep track of two pointers, l1 and l2, which point to the current elements in nums1 and nums2, respectively.
+
+We compare the elements pointed to by l1 and l2. If the elements are equal, then we add the element to a new array, which will store the intersection of the two arrays. We also increment both l1 and l2.
+
+If the elements are not equal, then we simply increment the pointer that points to the smaller element.
+
+We continue this process until we reach the end of one of the arrays.
+
+Finally, we return the new array that stores the intersection of the two arrays.
+
+**Algorithm:**
+The algorithm can be broken down into the following steps:
+
+1. Sort the `nums1` and `nums2` arrays.
+2. Initialize two pointers `l1` and `l2` to the beginning of the `nums1` and nums2 arrays, respectively.
+3. Initialize a counter `pos` to `0`.
+4. Iterate while `l1` is less than the length of `nums1` and `l2` is less than the length of `nums2`:
+    * If `nums1[l1] < nums2[l2]`, then increment `l1`.
+    * If `nums1[l1] > nums2[l2]`, then increment `l2`.
+    * If `nums1[l1] == nums2[l2]`, then do the following:
+        * If `pos > 0 `and `nums1[pos - 1]` != nums1[l1], then add `nums1[l1]` to the result vector at index pos.
+        * Increment `pos`.
+        * Increment `l1` and `l2`.
+5. Remove all elements from the result vector after index `pos`.
+6. Return the result vector.
+
+
+C++
+
+    vector<int> intersection(vector<int>& nums1, vector<int>& nums2) {
+    // Sort the two arrays.
+    sort(nums1.begin(), nums1.end());
+    sort(nums2.begin(), nums2.end());
+
+    // Create a new array to store the intersection of the two arrays.
+    vector<int> intersection;
+
+    // Declare two pointers to keep track of the current elements in the two arrays.
+    int l1 = 0;
+    int l2 = 0;
+
+    // Iterate over the two arrays.
+    while (l1 < nums1.size() && l2 < nums2.size()) {
+            if(nums1[l1] < nums2[l2])
+                l1++;
+            else if(nums1[l1]>nums2[l2])
+                l2++;
+            else{ 
+                if(nums1[l1] == nums2[l2]){
+                    if((pos > 0 && nums1[pos-1] != nums1[l1]) || pos == 0)
+                        nums1[pos++] = nums1[l1];
+                }
+                l1++;
+                l2++;
+            }
+        }
+        nums1.erase(nums1.begin()+pos,nums1.end());
+        return nums1;
+    }
+
+This algorithm works because it guarantees that the first `pos` elements in the result vector will be the elements that are present in both `nums1` and `nums2`. This is because at each step, the algorithm only adds an element to the result vector if it is also present in the other array.
+
+The time complexity of this algorithm is `O(N log N)`, where `N` is the length of the longer array. This is because the sorting step takes `O(N log N)` time, and the rest of the steps take `O(N)` time. The space complexity of this algorithm is `O(N)`, because the result vector can hold up to `N` elements.
+
+## [Question 5](#question-5): [Intersection of Two Arrays II](https://leetcode.com/problems/intersection-of-two-arrays-ii/)
+Given two integer arrays `nums1` and `nums2`, return *an array of their intersection*. Each element in the result must appear as many times as it shows in both arrays and you may return the result in any order.
+
+ 
+
+**Example 1:**
+
+
+&nbsp; **Input:** nums1 = [1,2,2,1], nums2 = [2,2]
+
+&nbsp; **Output:** [2,2]
+
+**Example 2:**
+
+
+&nbsp; **Input:** nums1 = [4,9,5], nums2 = [9,4,9,8,4]
+
+&nbsp; **Output:** [4,9]
+
+&nbsp; **Explanation:** [9,4] is also accepted.
+ 
+
+**Constraints:**
+
+* `1 <= nums1.length, nums2.length <= 1000`
+* `0 <= nums1[i], nums2[i] <= 1000`
+
+## Solution
+**Approach:**
+
+The approach is to first sort the two given arrays, nums1 and nums2. This is done so that we can find the intersection of the two arrays more efficiently. Once the arrays are sorted, we can use a simple two pointer algorithm to find the intersection.
+
+    vector<int> intersect(vector<int>& nums1, vector<int>& nums2) {
+        sort(nums1.begin(), nums1.end());
+        sort(nums2.begin(), nums2.end());
+
+        int l1 = 0;
+        int l2 = 0;
+        int pos = 0;
+        while(l1 < nums1.size() && l2 < nums2.size()){
+            if(nums1[l1] < nums2[l2])
+                l1++;
+            else if(nums1[l1]>nums2[l2])
+                l2++;
+            else{ 
+                if(nums1[l1] == nums2[l2]){
+                    // if((pos > 0 && nums1[pos-1] != nums1[l1]) || pos == 0)
+                    nums1[pos++] = nums1[l1];
+                }
+                l1++;
+                l2++;
+            }
+        }
+        nums1.erase(nums1.begin()+pos,nums1.end());
+        return nums1;
+    }
+
+**Algorithm:**
+
+1. Initialize two pointers l1 and l2 to point to the beginning of the two arrays, respectively.
+2. Iterate while l1 is less than the length of nums1 and l2 is less than the length of nums2.
+    * If `nums1[l1] < nums2[l2]`, then increment `l1`.
+    * If `nums1[l1] > nums2[l2]`, then increment `l2`.
+    * If `nums1[l1] == nums2[l2]`, then do the following:
+        * If `pos` is greater than `0` and `nums1[pos - 1] != nums1[l1]` (this means that the current element is not a duplicate), then add `nums1[l1]` to `nums1` at index `pos`.
+        * Increment `pos`.
+        * Increment `l1` and `l2`.
+3. After the loop, erase the elements in `nums1` from index `pos` onwards. This is because these elements are not part of the intersection.
+
+**Complexity:**
+
+The time complexity of this algorithm is `O(m + n)`, where m is the length of `nums1` and `n` is the length of `nums2`. This is because the sorting step takes `O(m log m)` time and the two pointer loop takes `O(m + n)` time.
+
+The space complexity of this algorithm is `O(1)`, since we are only using two pointers.
+
+## [Question 6](#question-6): [Maximum Population Year](https://leetcode.com/problems/maximum-population-year/)
+You are given a 2D integer array logs where each l`ogs[i] = [birthi, deathi]` indicates the birth and death years of the i<sup>th</sup> person.
+
+The population of some year `x` is the number of people alive during that year. The ith person is counted in year x's population if `x` is in the inclusive range `[birthi, deathi - 1]`. Note that the person is not counted in the year that they die.
+
+*Return the **earliest** year with the **maximum population.***
+ 
+
+**Example 1:**
+
+
+&nbsp; **Input:** logs = [[1993,1999],[2000,2010]]
+
+&nbsp; **Output:** 1993
+
+&nbsp; **Explanation:**The maximum population is 1, and 1993 is the earliest year with this population.
+
+Example 2:
+
+
+&nbsp; **Input:** logs = [[1950,1961],[1960,1971],[1970,1981]]
+
+&nbsp; **Output:** 1960
+
+&nbsp; **Explanation:**
+The maximum population is 2, and it had happened in years 1960 and 1970.
+The earlier year between them is 1960.
+ 
+
+**Constraints:**
+
+* `1 <= logs.length <= 100`
+* `1950 <= birthi < deathi <= 2050`
+## Solution
+**Approach:**
+
+The approach of the code is to use a cumulative sum array to track the population of each year. The cumulative sum array is initialized to all zeros. Then, for each log, the corresponding year is incremented in the cumulative sum array. Finally, the maximum population is found by iterating over the cumulative sum array and finding the index with the maximum value.
+
+**Algorithm:**
+
+The algorithm of the code can be broken down into the following steps:
+
+1. Initialize a cumulative sum array of size 101 (assuming the years are from 1950 to 2050).
+2. For each log:
+    * Increment the cumulative sum array at the index of the start year.
+    * Decrement the cumulative sum array at the index of the end year.
+3. Find the maximum value in the cumulative sum array.
+4. Return the year corresponding to the maximum value.
+
+**Here is a more detailed explanation of each step:**
+
+1. The cumulative sum array is initialized to all zeros. This means that initially, the population of all years is assumed to be 0.
+2. For each log, the corresponding year is incremented in the cumulative sum array. This means that the population of the year is increased by 1.
+3. The maximum population is found by iterating over the cumulative sum array and finding the index with the maximum value. This means that the year with the maximum population is found.
+4. The year corresponding to the maximum value is returned.
+
+**code**    
+
+    int maximumPopulation(vector<vector<int>>& logs) {
+        int year[101] = {0};
+
+        for(int i=0;i<logs.size();i++){
+            year[logs[i][0]-1950]++;
+            year[logs[i][1]-1950]--;
+        }
+
+        for(int i = 1 ; i < 101 ; i++){
+            year[i] += year[i-1];
+        }
+
+        int max = 0;
+        int maxYear = 1950;
+
+        for(int i = 0 ; i < 101 ; i++){
+            if(max < year[i]){
+                max = year[i];
+                maxYear = 1950 + i;
+            }
+        }
+        return maxYear;
+    }
+
+## [Question 7](#question-7): [Find Pivot Index](https://leetcode.com/problems/find-pivot-index/description/)
+Given an array of integers `nums`, calculate the pivot index of this array.
+
+The **pivot index** is the index where the sum of all the numbers strictly to the left of the index is equal to the sum of all the numbers strictly to the index's right.
+
+If the index is on the left edge of the array, then the left sum is `0` because there are no elements to the left. This also applies to the right edge of the array.
+
+Return the **leftmost pivot index**. If no such index exists, return `-1`.
+
+
+**Example 1:**
+
+&nbsp; **Input:** nums = [1,7,3,6,5,6]
+
+&nbsp; **Output:** 3
+
+&nbsp; **Explanation:**
+The pivot index is 3.<br>
+Left sum = nums[0] + nums[1] + nums[2] = 1 + 7 + 3 = 11<br>
+Right sum = nums[4] + nums[5] = 5 + 6 = 11
+
+**Example 2:**
+
+&nbsp; **Input:** nums = [1,2,3]
+
+&nbsp; **Output:** -1
+
+&nbsp; **Explanation:**
+There is no index that satisfies the conditions in the problem statement.
+
+**Example 3:**
+
+&nbsp; **Input:** nums = [2,1,-1]
+
+&nbsp; **Output:** 0
+
+&nbsp; **Explanation:**
+The pivot index is 0.<br>
+Left sum = 0 (no elements to the left of index 0)<br>
+Right sum = nums[1] + nums[2] = 1 + -1 = 0
+ 
+
+**Constraints:**
+* `1 <= nums.length <= 104`
+* `-1000 <= nums[i] <= 1000`
