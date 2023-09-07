@@ -1,6 +1,6 @@
 # Day : 3
 
-![Day 2](../images/day3.png)
+![Day 3](../images/day3.png)
 
 ## [Question 1](#question-1): [Running Sum of 1d Array](https://leetcode.com/problems/running-sum-of-1d-array)
 Given an array `nums`. We define a running sum of an array as `runningSum[i] = sum(nums[0]…nums[i])`.
