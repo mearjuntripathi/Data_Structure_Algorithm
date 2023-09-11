@@ -9,6 +9,6 @@
 
 ## [4. Maximum Depth of Binary Tree](104.%20Maximum%20Depth%20of%20Binary%20Tree.md)
 
-## [5. Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree/)
+## [5. Invert Binary Tree](226.%20Invert%20Binary%20Tree.md)
 
 ## [6. Symmetric Tree](101.%20Symmetric%20Tree.md)
