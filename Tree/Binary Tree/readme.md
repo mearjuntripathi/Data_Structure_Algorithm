@@ -144,3 +144,37 @@ class Node{
 
 * **Balance the tree:** This operation balances the tree, which ensures that the tree remains balanced.
 
+
+## Psudo code and explenation of Operation of Binary Tree
+
+### Create a Empty Binary tree
+The `Binary_tree` class has a `Root` field, which is a pointer to the root node of the tree. The `Binary_tree()` constructor initializes the `Root` field to `NULL`, which indicates that the tree is empty.
+
+```cpp
+class Node{
+    public:
+        int data;
+        Node *left_child;
+        Node *right_child;
+
+        Node(int data){
+            this->data = data;
+            left_child = right_child = NULL;
+        }
+};
+
+class Binary_tree {
+    public :
+    Node *Root;
+        Binary_tree(){
+            Root = NULL;
+        }
+        Binary_tree(int data){
+            Root = new Node(data);
+        }
+};
+```
+
+The `Binary_tree(int data)` constructor creates a new binary tree with a root node that has the specified data. The root node's left and right child nodes are set to `NULL`.
+
+### Depth first value

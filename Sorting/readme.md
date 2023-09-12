@@ -4,16 +4,13 @@ The operation of sorting is the most common task performed by computers today. S
 
 ## Types of sorting
 Sorting can be performed in many ways. Over a time several methods (or algorithms) are being developed to sort data(s). 
-<ul>
-<li>Bubble sort</li>
-<li>Selection sort</li>
-<li>Quick sort</li>
-<li>Merge sort</li>
-<li>Heap sort</li>
-<li>Binary sort</li>
-<li>Shell sort</li>
-<li>Radix sort</li>
-</ul>
+
+* [Bubble sort](#bubble-sort)
+* [Selection sort](#selection-sort)
+* [Quick sort](#quick-sort)
+* [Merge sort](#merge-sort)
+* [Count Sort](#counting-sort)
+
 
 ## Complexity of Sorting Algorithm
 The complexity of sorting algorithm measures the running time of n items to be sorted. The operations in the sorting algorithm, where A1, A2 ..... An contains the items to be sorted and B is an auxiliary location, can be generalized as:
@@ -56,7 +53,7 @@ Insertion sort algorithm sorts a set of values by inserting values into an exist
 
 <br>
 
-![Insertion sort](https://miro.medium.com/v2/resize:fit:765/0*1zi2XtjiLXa3LYZh.PNG)
+![Insertion sort](https://www.crio.do/blog/content/images/2022/02/Insertion-sort-example.png)
 
 <pre>
 <center> Algorithm </center>
@@ -85,7 +82,7 @@ This process is repeated for the remaining unsorted portion  of the list until t
 
 <br>
 
-![Selection Sort](https://www.programiz.com/sites/tutorial2program/files/Selection-sort-0.png)
+![Selection Sort](https://www.w3resource.com/w3r_images/selection-short.png)
 
 <pre>
 <center>Algorithm</center>
@@ -156,7 +153,7 @@ Space Complexity : O(log n)
 ## Counting Sort
 Counting sort is a sorting technique based on keys between a specific range. It works by counting the number of objects having distinct key values (a kind of hashing). Then do some arithmetic operations to calculate the position of each object in the output sequence.
 
-![counting sort](https://www.researchgate.net/publication/220686480/figure/fig4/AS:667707569614851@1536205298801/Example-of-counting-sort.png)
+![counting sort](https://prepinsta.com/wp-content/uploads/2020/06/Counting-Sort-1.webp)
 
 ### <center>Algorithm</center>
     
