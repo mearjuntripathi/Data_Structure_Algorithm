@@ -17,3 +17,12 @@
 ## [DAY : 7](./DAY%20:%207/readme.md)
 
 ## [DAY : 8](./DAY%20:%208/readme.md)
+
+## [DAY : 9](./DAY%20:%209/readme.md)
+
+## [DAY : 10](./DAY%20:%2010/readme.md)
+
+## [DAY : 11](./DAY%20:%2011/readme.md)
+
+## [DAY : 12](./DAY%20:%2012/readme.md)
+
