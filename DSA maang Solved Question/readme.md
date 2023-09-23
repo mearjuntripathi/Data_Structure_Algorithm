@@ -37,3 +37,7 @@
 ## [DAY : 17](./DAY%20:%2017/readme.md)
 
 ## [DAY : 18](./DAY%20:%2018/readme.md)
+
+## [DAY : 19](./DAY%20:%2019/readme.md)
+
+## [DAY : 20](./DAY%20:%2020/readme.md)
