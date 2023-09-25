@@ -43,3 +43,5 @@
 ## [DAY : 20](./DAY%20:%2020/readme.md)
 
 ## [DAY : 21](./DAY%20:%2021/readme.md)
+
+## [DAY : 22](./DAY%20:%2022/readme.md)
