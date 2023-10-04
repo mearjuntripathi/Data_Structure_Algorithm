@@ -8,4 +8,4 @@
 
 ## [3. Minimum Remove to Make Valid Parantheses](1249.%20Minimum%20Remove%20to%20Make%20Valid%20Parentheses.md)
 
-## [4. 132 Pattern](556.%20Next%20Greater%20Element%20III.md)
+## [4. 132 Pattern](456.%20132%20Pattern.md)
