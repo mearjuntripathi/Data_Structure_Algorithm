@@ -6,6 +6,6 @@
 
 ## [2. Flatten Nested List Iterator](341.%20Flatten%20Nested%20List%20Iterator.md)
 
-## [3. Simplify Path]()
+## [3. Simplify Path](71.%20Simplify%20Path.md)
 
-## [4. Longest Absolute File Path]()
+## [4. Longest Absolute File Path](388.%20Longest%20Absolute%20File%20Path.md)
