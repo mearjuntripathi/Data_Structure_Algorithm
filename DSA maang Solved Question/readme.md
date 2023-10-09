@@ -71,3 +71,5 @@
 ## [DAY : 34](./DAY%20:%2034/readme.md)
 
 ## [DAY : 35](./DAY%20:%2035/readme.md)
+
+## [DAY : 36](./DAY%20:%2036/readme.md)
