@@ -10,4 +10,4 @@
 
 ## [4. String Compression](443.%20String%20Compression.md)
 
-## [5. Count and Say]()
+## [5. Count and Say](38.%20Count%20and%20Say.md)
