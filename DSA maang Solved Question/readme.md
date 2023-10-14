@@ -80,4 +80,6 @@
 
 ## [DAY : 39](./DAY%20:%2039/readme.md)
 
-## [DAY : 40](./DAY%20:%2039/readme.md)
+## [DAY : 40](./DAY%20:%2040/readme.md)
+
+## [DAY : 41](./DAY%20:%2041/readme.md)
