@@ -1,11 +1,11 @@
 # Day 59
 
-![](../images/day58.png)
+![](../images/day59.png)
 
-## [1. Fraction to Recurring Decimal](166.%20Fraction%20to%20Recurring%20Decimal.md)
+## [1. Maximum Subarray](53.%20Maximum%20Subarray.md)
 
-## [2. Fruit into baskets]()
+## [2. Maximum Product Subarray](152.%20Maximum%20Product%20Subarray.md)
 
-## [3. Encode and Decode TinyURL]()
+## [3. Coin Change](322.%20Coin%20Change.md)
 
-## [4. Minimum Area Rectangle]()
+## [4. Coin Change II](518.%20Coin%20Change%20II.md)
