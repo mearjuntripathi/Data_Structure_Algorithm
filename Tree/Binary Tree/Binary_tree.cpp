@@ -1,8 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-
-
 class Binary_tree {
     class Node{
     public:
@@ -109,7 +107,6 @@ class Binary_tree {
                     st.push(curr->left_child);
             }
         }
-        
 };
 
 int main() {
@@ -120,6 +117,7 @@ int main() {
     b.preorder_traversal();
     cout << endl;
     b.preorder_traversal(b.root);
-
+    cout << endl;
+    
     return 0;
 }
