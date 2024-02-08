@@ -10,7 +10,7 @@ A binary tree is a finite set of nodes T = {v1, v2, ..., vn}, where:
 * There is a unique node r, called the root of T.
 * For each node v in T, there is a unique subset of nodes, called the children of v.
 * The children of v are disjoint from each other and from T \ {v}.
-* The root has no children.
+* The root has no children is know as leaf.
 * Each child of v is either a left child or a right child, but not both.
 ```
 
