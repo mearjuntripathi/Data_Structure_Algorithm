@@ -25,17 +25,17 @@ Here's a basic to intermediate syllabus for learning about bit manipulation:
    - Learn about bitwise arithmetic shortcuts.
    - Practice solving problems that require efficient bit manipulation techniques.
 
-### 6. Bitwise Operations in Real-world Applications:
+### 6. [Bitwise Operations in Real-world Applications](./bitwise%20operations%20in%20real-world%20applicatios.md):
    - Explore how bit manipulation is used in real-world applications such as cryptography, compression algorithms, and low-level system programming.
    - Understand the role of bit manipulation in hardware interfaces and device drivers.
    - Explore specific examples and case studies of bit manipulation in action.
 
-### 7. Practice and Projects:
+### 7. [Practice and Projects](practice%20and%20project.md):
    - Solve coding challenges and exercises that focus on bit manipulation.
    - Work on projects that require implementing bit manipulation algorithms or techniques.
    - Practice applying what you've learned to real-world scenarios.
 
-### Resources:
+### [Resources](resouce.md):
    - Online tutorials and articles on bit manipulation.
    - Programming language documentation for bitwise operators.
    - Books on algorithms or computer science that cover bit manipulation.
