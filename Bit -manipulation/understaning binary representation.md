@@ -31,7 +31,7 @@
 
 Understanding binary representation forms the foundation for working with individual bits and performing bitwise operations. Once you're comfortable with binary representation, we can move on to basic bitwise operations.
 
-Sure! Let's dive into some C++ code examples for working with binary representation:
+Let's dive into some C++ code examples for working with binary representation:
 
 #### Converting Decimal to Binary in C++:
 ```cpp

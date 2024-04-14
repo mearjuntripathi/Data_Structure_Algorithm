@@ -49,7 +49,7 @@ Let's delve deeper into the theory behind **bitwise operations**:
 Understanding bitwise operations is essential for various programming tasks, especially in fields like system programming, cryptography, and embedded systems development. They offer a powerful way to work with individual bits within binary data efficiently. Practice and experimentation are key to mastering bitwise operations effectively.
 
 
-Great! Let's explore bitwise AND, OR, XOR, and NOT operations in C++:
+Let's explore bitwise AND, OR, XOR, and NOT operations in C++:
 
 #### Bitwise AND (`&`):
 - The bitwise AND operator (`&`) compares each bit of two numbers and produces a result with a 1 bit only if both corresponding bits are 1.
@@ -134,6 +134,6 @@ Bitwise NOT result: -6
 ```
 Note: The result is in 2's complement representation due to the way negative numbers are represented in binary.
 
-These examples demonstrate basic bitwise operations in C++. Let me know if you'd like to explore anything further!
+These examples demonstrate basic bitwise operations in C++.
 
 ---
