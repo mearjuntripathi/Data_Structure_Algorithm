@@ -66,7 +66,7 @@ The basic operations that can be performed on queue are -
 
 11. **Breadth-first search algorithm:** The breadth-first search algorithm uses a queue to explore nodes in a graph level-by-level. The algorithm starts at a given node, adds its neighbors to the queue, and then processes each neighbor in turn.
 
-## Application of Stack in real life:
+## Application of Queue in real life:
 
 1. Round robin techniques for processor scheduling is implemented using queue.
 2. Printer server routines (in drivers) are designed using queues.
