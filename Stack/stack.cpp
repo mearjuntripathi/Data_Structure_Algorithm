@@ -1,82 +1,89 @@
-/*
-    This is a program to understand a stack with concept of dynamic programming
-    use of linklist
-*/
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
-class Node{
-    
-        int data;
-        Node *next;
+template <typename T>
+class Node {
+    T data;     
+    Node* next;
 
-    public :
-        Node (int data, Node* next){
-            this->data = data;
-            this->next = next;
-        }
-
-        int get_data(){return data;}
-
-        void set_data(int data){this->data = data;}
-
-        Node* get_next_node(){return next;}
-
-        void set_next_node(Node *next){this->next = next;}
-};
-
-class Stack{
-    
-    Node *head;
-
-    public:
-
-        Stack() { head = NULL; }
-
-        bool isEmpty();
-
-        void push(int data);
-
-        int pop();
-
-        int peak();
-};
-
-bool Stack :: isEmpty(){
-    return head == NULL;
-}
-
-void Stack :: push(int data){
-    Node *newNode = new Node(data, head);
-    head = newNode;
-}
-
-int Stack :: pop(){
-    if(isEmpty()){
-        cout<<"Stack is Under-flow condition"<<endl;
-        return -1;
+public:
+    Node(T data, Node* next = NULL) {
+        this->data = data;
+        this->next = next; 
     }
-    Node *temp = head;
-    int data = head->get_data();
-    head = head->get_next_node();
-    free(temp);
-    return data;
+
+    T get_data() { return data; }  // Getter for data
+    void set_data(T data) { this->data = data; }  // Setter for data
+
+    Node* get_next_node() { return next; }  // Getter for next node
+    void set_next_node(Node* next) { this->next = next; }  // Setter for next node
+};
+
+template <typename T>
+class Stack {
+    Node<T>* head;  
+
+public:
+    Stack() { head = NULL; }
+
+    bool isEmpty(); 
+
+    void push(T data); 
+
+    T pop();  
+
+    T peak();  
+};
+
+template <typename T>
+bool Stack<T>::isEmpty() {
+    return head == NULL; 
 }
 
-int Stack :: peak(){
-    return head -> get_data();
+template <typename T>
+void Stack<T>::push(T data) {
+    Node<T>* newNode = new Node<T>(data, head);  
+    head = newNode; 
 }
 
-int main(){
-    Stack s;
+template <typename T>
+T Stack<T>::pop() {
+    if (isEmpty()) {
+        cout << "Stack is Under-flow condition" << endl;
+        return T(); 
+    }
+    Node<T>* temp = head; 
+    T data = head->get_data(); 
+    head = head->get_next_node(); 
+    delete temp;  
+    return data; 
+}
+
+template <typename T>
+T Stack<T>::peak() {
+    if (isEmpty()) {
+        cout << "Stack is empty!" << endl;
+        return T(); 
+    }
+    return head->get_data(); 
+}
+
+int main() {
+    Stack<int> s;  
+
     s.push(7);
     s.push(8);
     s.push(9);
     s.push(10);
-    cout<<s.pop() << endl;
-    cout<<s.pop() << endl;
-    cout<<s.pop() << endl;
+
+    cout << s.pop() << endl;  
+    cout << s.pop() << endl;  
+    cout << s.pop() << endl;  
+
     s.push(11);
-    cout<<s.pop() << endl;
-    cout<<s.pop() << endl;
+
+    cout << s.pop() << endl;  
+    cout << s.pop() << endl;  
+
+    return 0;
 }
