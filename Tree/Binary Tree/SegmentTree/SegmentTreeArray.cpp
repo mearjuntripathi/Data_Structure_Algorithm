@@ -68,7 +68,7 @@ int main() {
 
     SegmentTree s(arr);
 
-    while (q--) {
+    for(int i = 0 ; i < q ; i++) {
         int c, l, r;
         cin >> c >> l >> r;
         if (c == 1) {
